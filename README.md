@@ -5,7 +5,7 @@ TruVision presents sunglasses integrated with advanced technological features ai
 
 ## Demo
 
-![Glasses Image](docs/IMG_7903.heic)
+![Glasses Image](docs/SideImage.png)
 
 
 ## Features

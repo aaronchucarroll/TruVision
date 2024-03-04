@@ -5,8 +5,10 @@ TruVision presents sunglasses integrated with advanced technological features ai
 
 ## Demo
 **Video Demo**
+
 [![Video Demo](https://img.youtube.com/vi/VVPZtGHIujo/0.jpg)](https://www.youtube.com/watch?v=VVPZtGHIujo)
 
+**Images**
 
 <img src="docs/TopImage.png" alt="Top Image" width="300">
 <img src="docs/FrontImage.png" alt="Front Image" width="300">

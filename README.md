@@ -8,7 +8,7 @@ TruVision presents sunglasses integrated with advanced technological features ai
 <img src="docs/FrontImage.png" alt="Front Image" width="300">
 <img src="docs/SideImage.png" alt="Side Image" width="300">
 
-<video src='/docs/VideoDemo.mp4' />
+![](/docs/VideoDemo.mp4
 
 
 

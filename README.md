@@ -8,6 +8,9 @@ TruVision presents sunglasses integrated with advanced technological features ai
 <img src="docs/FrontImage.png" alt="Front Image" width="300">
 <img src="docs/SideImage.png" alt="Side Image" width="300">
 
+<video src='/docs/VideoDemo.mp4' />
+
+
 
 ## Features
 - Instant text-to-speech translation: Users can simply press a button on the sunglasses to have captured text translated into speech in their preferred language.

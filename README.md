@@ -4,8 +4,8 @@
 TruVision presents sunglasses integrated with advanced technological features aimed at enhancing accessibility for the blind and low-vision. The sunglasses are equipped with a Raspberry Pi, button, and camera module, providing users with instant text-to-speech functionality upon pressing a button. Leveraging Google Cloud services, including Text-to-Speech, Translate, and Cloud Vision APIs, TruVision seamlessly translates text captured by the camera into multiple languages, offering real-time audio feedback. 
 
 ## Demo
-![Top Image](doc/TopImage.png)
-![Front Image](doc/FrontImage.png)
+![Top Image](docs/TopImage.png)
+![Front Image](docs/FrontImage.png)
 ![Side Image](docs/SideImage.png)
 
 ![Demo Video](docs/IMG_7918.mov)

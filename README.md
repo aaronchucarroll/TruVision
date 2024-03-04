@@ -10,9 +10,9 @@ TruVision presents sunglasses integrated with advanced technological features ai
 
 
 **Interact with the Sunglasses:**
-    - Point the camera at text you wish to translate.
-    - Press the button on the sunglasses to trigger text capture and translation.
-    - Enjoy real-time audio feedback in your preferred language.
+- Point the camera at text you wish to translate.
+- Press the button on the sunglasses to trigger text capture and translation.
+- Enjoy real-time audio feedback in your preferred language.
 
 ## Contributors
 - [Aaron Chu-Carroll](https://github.com/aaronchucarroll)

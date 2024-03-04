@@ -3,9 +3,10 @@ import tempfile
 from flask import Flask, request, jsonify, send_file
 from google.cloud import vision
 from google.cloud import texttospeech
+from google.cloud import translate_v2 as translate
 
 # Set up Google Cloud credentials
-#os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./truvision-416017-6ac5fc6efb38.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./truvision-416017-6ac5fc6efb38.json"
 
 app = Flask(__name__)
 
@@ -15,11 +16,10 @@ def detect_text():
         return jsonify({'error': 'No file part'}), 400
     
     file = request.files['file']
+    language = request.args.get('language', 'en-US')  # Default to 'en-US' if language param is not provided
     
     if file.filename == '':
         return jsonify({'error': 'No selected file'}), 400
-    
-    language = request.args.get('language', 'en-US')  # Get language parameter, default to English if not provided
     
     if file:
         client = vision.ImageAnnotatorClient()
@@ -42,10 +42,26 @@ def detect_text():
 
 
 def generate_audio(text, language):
+    translate_client = translate.Client()
+    if (language  == "en-US"):
+        language_code = "en"
+    elif (language == 'es-ES'):
+        language_code = "es"
+    elif (language == 'fr-FR'):
+        language_code = 'fr'
+    elif (language == 'it-IT'):
+        language_code = 'it'
+    elif (language == 'cmn-CN'):
+        language_code = 'zh'
+    else:
+        language_code = 'en'
+    
+    translated_text = translate_client.translate(text, target_language=language_code)
+    text = translated_text['translatedText']
     client = texttospeech.TextToSpeechClient()
     synthesis_input = texttospeech.SynthesisInput(text=text)
     voice = texttospeech.VoiceSelectionParams(
-        language_code=language, ssml_gender=texttospeech.SsmlVoiceGender.MALE
+        language_code=language, ssml_gender=texttospeech.SsmlVoiceGender.NEUTRAL
     )
     audio_config = texttospeech.AudioConfig(
         audio_encoding=texttospeech.AudioEncoding.MP3
@@ -54,7 +70,6 @@ def generate_audio(text, language):
         input=synthesis_input, voice=voice, audio_config=audio_config
     )
     return response.audio_content
-
 
 if __name__ == '__main__':
     app.run(debug=True)

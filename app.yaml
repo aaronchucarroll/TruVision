@@ -1,0 +1,4 @@
+runtime: python38
+
+env_variables:
+  GOOGLE_APPLICATION_CREDENTIALS: "./truvision-416017-6ac5fc6efb38.json"
